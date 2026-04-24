@@ -109,8 +109,9 @@
     .hero-pillar-label { font-size: 10px; letter-spacing: 0.18em; color: var(--rust); font-family: 'JetBrains Mono', monospace; margin-bottom: 6px; }
     .hero-pillar-val { font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: 15px; color: var(--green); line-height: 1.2; }
 
-    .hero-photo-wrap { position: relative; }
-    .photo-placeholder { background: var(--soft); border-radius: 6px; aspect-ratio: 5/6; display: flex; align-items: center; justify-content: center; font-size: 12px; letter-spacing: 0.12em; color: var(--mute); font-family: 'JetBrains Mono', monospace; text-transform: uppercase; text-align: center; padding: 1rem; }
+    /* ── SHOP PHOTO BAND ── */
+    .shop-photo-band { width: 100%; overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); max-height: 480px; }
+    .shop-photo-band img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block; filter: brightness(0.97); }
 
     /* ── ABOUT ── */
     .meet { padding: 72px 48px; background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -124,6 +125,8 @@
     .meet-why-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--rust); letter-spacing: 0.1em; padding-top: 2px; flex-shrink: 0; }
     .meet-why-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
     .meet-why-body { font-size: 13.5px; color: var(--mute); line-height: 1.6; }
+    .meet-photo { width: 100%; border-radius: 6px; overflow: hidden; margin-bottom: 28px; }
+    .meet-photo img { width: 100%; display: block; object-fit: cover; aspect-ratio: 4/3; filter: brightness(0.98); }
     .meet-creds { display: flex; flex-direction: column; }
     .meet-cred { padding: 18px 0; border-bottom: 1px solid var(--line); }
     .meet-cred:first-child { border-top: 1px solid var(--line); }
@@ -200,6 +203,7 @@
       .hero { grid-template-columns: 1fr; padding: 36px 18px 48px; gap: 28px; }
       .hero-photo-wrap { order: -1; }
       .hero-pillars { gap: 20px; }
+      .shop-photo-band { max-height: 240px; }
       .meet { padding: 48px 18px; }
       .meet-grid { grid-template-columns: 1fr; }
       .services { padding: 48px 18px; }
@@ -283,6 +287,11 @@
   </div>
 </section>
 
+<!-- SHOP PHOTO -->
+<div class="shop-photo-band">
+  <img src="images/shop-exterior.jpg" alt="AF Auto Mechanic shop — Dobbs Road, St. Augustine"/>
+</div>
+
 <!-- ABOUT -->
 <section class="meet" id="meet">
   <div class="section-kicker mono">✦ THE SHOP</div>
@@ -324,6 +333,9 @@
       </div>
     </div>
     <div>
+      <div class="meet-photo">
+        <img src="images/mechanic-at-work.jpg" alt="Certified mechanic at work — AF Auto"/>
+      </div>
       <div class="meet-creds">
         <div class="meet-cred">
           <div class="meet-cred-title mono">CERTIFIED MECHANIC</div>
