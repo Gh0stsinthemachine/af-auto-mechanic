@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AF Auto Mechanic — St. Augustine, FL</title>
+  <meta name="description" content="Local certified mechanic on Dobbs Road. Honest, reliable auto repair. Free diagnostic for new customers. (904) 439-6000"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #f4ede0;
+      --paper: #faf6ec;
+      --ink:   #1f2a21;
+      --green: #1f3a2b;
+      --moss:  #2d5a3f;
+      --rust:  #b9542a;
+      --soft:  #d9cfb8;
+      --line:  rgba(31,42,33,0.12);
+      --mute:  rgba(31,42,33,0.62);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    em, i { font-style: normal; }
+
+    .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+    .display { font-family: 'Inter Tight', 'Inter', sans-serif; font-weight: 600; letter-spacing: -0.035em; }
+
+    /* ── PROMO BAR ── */
+    .promo-bar {
+      background: var(--rust);
+      color: #fff;
+      padding: 9px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      font-family: 'JetBrains Mono', monospace;
+      text-align: center;
+    }
+
+    /* ── RATING BAR ── */
+    .rating-bar {
+      background: var(--green);
+      color: var(--cream);
+      padding: 10px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+    }
+    .rating-bar-left { display: flex; align-items: center; gap: 8px; }
+    .rating-bar-mid { display: flex; gap: 24px; opacity: 0.75; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--cream);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 48px;
+      font-size: 13px;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 10px; }
+    .nav-badge { width: 28px; height: 28px; border-radius: 50%; background: var(--green); color: var(--cream); display: grid; place-items: center; font-weight: 700; font-size: 13px; }
+    .nav-name { font-weight: 600; letter-spacing: 0.02em; }
+    .nav-city { color: var(--mute); font-size: 11px; margin-left: 4px; font-family: 'JetBrains Mono', monospace; }
+    .nav-links { display: flex; gap: 28px; color: var(--mute); }
+    .nav-links a { text-decoration: none; color: inherit; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-right { display: flex; align-items: center; gap: 14px; }
+    .nav-phone { font-size: 12px; font-family: 'JetBrains Mono', monospace; }
+    .btn-pill { background: var(--green); color: var(--cream); border: none; padding: 9px 16px; border-radius: 999px; font-size: 13px; font-weight: 500; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.15s; }
+    .btn-pill:hover { background: var(--moss); }
+
+    /* ── HERO ── */
+    .hero { padding: 72px 48px 56px; max-width: 860px; margin: 0 auto; }
+    .hero-body { font-size: 18px; line-height: 1.6; color: var(--mute); max-width: 560px; margin-top: 28px; }
+    .hero-kicker { font-size: 11px; color: var(--rust); letter-spacing: 0.2em; margin-bottom: 20px; font-family: 'JetBrains Mono', monospace; }
+    .hero h1 { font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: clamp(52px, 7vw, 80px); line-height: 0.97; letter-spacing: -0.035em; color: var(--green); }
+    .hero h1 .accent { color: var(--rust); }
+    .hero-actions { display: flex; gap: 12px; margin-top: 36px; align-items: center; flex-wrap: wrap; }
+    .btn-pill-lg { background: var(--green); color: var(--cream); border: none; padding: 18px 28px; border-radius: 999px; font-size: 16px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 10px; text-decoration: none; transition: background 0.15s; }
+    .btn-pill-lg:hover { background: var(--moss); }
+    .btn-pill-out { background: transparent; color: var(--green); border: 1.5px solid var(--green); padding: 16.5px 24px; border-radius: 999px; font-size: 16px; font-weight: 500; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.15s; }
+    .btn-pill-out:hover { background: var(--green); color: var(--cream); }
+
+    .hero-pillars { display: flex; gap: 32px; margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--line); flex-wrap: wrap; }
+    .hero-pillar-label { font-size: 10px; letter-spacing: 0.18em; color: var(--rust); font-family: 'JetBrains Mono', monospace; margin-bottom: 6px; }
+    .hero-pillar-val { font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: 15px; color: var(--green); line-height: 1.2; }
+
+    .hero-photo-wrap { position: relative; }
+    .photo-placeholder { background: var(--soft); border-radius: 6px; aspect-ratio: 5/6; display: flex; align-items: center; justify-content: center; font-size: 12px; letter-spacing: 0.12em; color: var(--mute); font-family: 'JetBrains Mono', monospace; text-transform: uppercase; text-align: center; padding: 1rem; }
+
+    /* ── ABOUT ── */
+    .meet { padding: 72px 48px; background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .meet-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: start; }
+    .meet h2 { font-family: 'Inter Tight', sans-serif; font-weight: 600; letter-spacing: -0.035em; font-size: clamp(28px, 4vw, 42px); line-height: 1.05; color: var(--green); margin-top: 14px; }
+    .meet-body { font-size: 16px; line-height: 1.7; color: var(--ink); margin-top: 20px; max-width: 520px; }
+    .meet-body + .meet-body { margin-top: 14px; }
+    .meet-whys { margin-top: 32px; }
+    .meet-why-h { font-size: 11px; letter-spacing: 0.15em; color: var(--rust); font-family: 'JetBrains Mono', monospace; margin-bottom: 16px; }
+    .meet-why-item { display: flex; gap: 16px; margin-bottom: 20px; }
+    .meet-why-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--rust); letter-spacing: 0.1em; padding-top: 2px; flex-shrink: 0; }
+    .meet-why-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+    .meet-why-body { font-size: 13.5px; color: var(--mute); line-height: 1.6; }
+    .meet-creds { display: flex; flex-direction: column; }
+    .meet-cred { padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .meet-cred:first-child { border-top: 1px solid var(--line); }
+    .meet-cred-title { font-size: 10px; letter-spacing: 0.2em; color: var(--rust); font-family: 'JetBrains Mono', monospace; margin-bottom: 4px; }
+    .meet-cred-body { font-size: 14px; color: var(--ink); line-height: 1.5; }
+
+    /* ── SERVICES ── */
+    .services { padding: 64px 48px; background: var(--cream); }
+    .services-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 16px; }
+    .services h2 { font-family: 'Inter Tight', sans-serif; font-weight: 600; letter-spacing: -0.035em; font-size: clamp(28px, 4vw, 44px); line-height: 1.05; color: var(--green); margin-top: 12px; }
+    .section-kicker { font-size: 11px; letter-spacing: 0.2em; color: var(--rust); font-family: 'JetBrains Mono', monospace; margin-bottom: 10px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .service-card { padding: 28px 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--paper); }
+    .service-icon { color: var(--green); font-size: 24px; margin-bottom: 14px; }
+    .service-name { font-family: 'Inter Tight', sans-serif; font-weight: 500; font-size: 18px; color: var(--ink); }
+    .service-blurb { font-size: 13.5px; color: var(--mute); line-height: 1.55; margin-top: 6px; }
+    .service-why { font-size: 12px; color: var(--rust); line-height: 1.55; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+    .services-callout { margin-top: 32px; padding: 22px 28px; border: 1.5px dashed var(--line); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .services-callout p { font-size: 14px; color: var(--mute); max-width: 520px; line-height: 1.6; }
+    .services-callout p strong { color: var(--ink); }
+
+    /* ── NOT A CHAIN ── */
+    .not-chain { padding: 72px 48px; background: var(--paper); border-top: 1px solid var(--line); }
+    .not-chain h2 { font-family: 'Inter Tight', sans-serif; font-weight: 600; letter-spacing: -0.035em; font-size: clamp(32px, 5vw, 52px); line-height: 0.97; color: var(--green); margin-top: 14px; }
+    .not-chain h2 .dim { color: var(--mute); }
+    .not-chain-sub { font-size: 15px; color: var(--mute); margin-top: 12px; max-width: 560px; line-height: 1.65; }
+    .not-chain-stat { font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: 17px; color: var(--green); border: 1px solid var(--line); padding: 12px 20px; margin-top: 24px; display: inline-block; }
+    .comparison-table { width: 100%; margin-top: 40px; border-collapse: collapse; font-size: 14px; }
+    .comparison-table th { padding: 12px 16px; text-align: left; font-size: 10px; letter-spacing: 0.18em; color: var(--mute); font-family: 'JetBrains Mono', monospace; border-bottom: 1px solid var(--line); }
+    .comparison-table th:nth-child(3) { color: var(--rust); }
+    .comparison-table td { padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .comparison-table td:first-child { color: var(--mute); font-size: 13px; }
+    .comparison-table td:nth-child(2) { color: var(--mute); font-size: 13px; opacity: 0.7; }
+    .comparison-table td:nth-child(3) { font-weight: 500; color: var(--green); font-size: 13px; }
+
+    /* ── BOOK CTA ── */
+    .book-cta { padding: 80px 48px; background: var(--green); color: var(--cream); display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: start; }
+    .book-cta .section-kicker { color: rgba(244,237,224,0.55); }
+    .book-cta h2 { font-family: 'Inter Tight', sans-serif; font-weight: 600; letter-spacing: -0.035em; font-size: clamp(34px, 5vw, 52px); line-height: 1; margin-top: 14px; }
+    .book-body { font-size: 16px; color: rgba(244,237,224,0.75); line-height: 1.65; margin-top: 20px; max-width: 440px; }
+    .book-actions { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+    .btn-pill-cream { background: var(--cream); color: var(--green); border: none; padding: 18px 28px; border-radius: 999px; font-size: 16px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; text-decoration: none; transition: background 0.15s; }
+    .btn-pill-cream:hover { background: #fff; }
+    .btn-pill-ghost { background: transparent; color: var(--cream); border: 1.5px solid rgba(244,237,224,0.4); padding: 16.5px 24px; border-radius: 999px; font-size: 16px; font-weight: 500; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.15s; }
+    .btn-pill-ghost:hover { border-color: var(--cream); }
+
+    .promo-cards { display: flex; flex-direction: column; gap: 0; }
+    .promo-card { padding: 20px 0; border-bottom: 1px solid rgba(244,237,224,0.1); }
+    .promo-card:first-child { border-top: 1px solid rgba(244,237,224,0.1); }
+    .promo-card-name { font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: 16px; margin-bottom: 4px; }
+    .promo-card-body { font-size: 13px; color: rgba(244,237,224,0.65); line-height: 1.5; }
+
+    /* ── FOOTER ── */
+    footer { padding: 56px 48px; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; background: var(--cream); }
+    .footer-drop { font-family: 'Inter Tight', sans-serif; font-weight: 600; letter-spacing: -0.035em; font-size: 28px; color: var(--green); line-height: 1.15; }
+    .footer-drop-body { font-size: 14px; color: var(--mute); margin-top: 10px; max-width: 320px; line-height: 1.6; }
+    .footer-col-kicker { font-size: 10px; letter-spacing: 0.2em; color: var(--rust); font-family: 'JetBrains Mono', monospace; margin-bottom: 12px; }
+    .footer-col-body { font-size: 14px; line-height: 1.8; color: var(--ink); }
+    .footer-col-body a { color: inherit; text-decoration: none; }
+    .footer-hours-row { display: flex; justify-content: space-between; max-width: 240px; }
+    .footer-hours-row span:first-child { color: var(--mute); }
+    .footer-bar { padding: 16px 48px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; font-size: 11px; color: var(--mute); font-family: 'JetBrains Mono', monospace; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .promo-bar { padding: 9px 18px; flex-direction: column; gap: 4px; }
+      .rating-bar { padding: 10px 18px; }
+      .rating-bar-mid { display: none; }
+      nav { padding: 14px 18px; }
+      .nav-links { display: none; }
+      .nav-city { display: none; }
+      .nav-phone { display: none; }
+      .photo-placeholder { aspect-ratio: 16/9; }
+      .hero { grid-template-columns: 1fr; padding: 36px 18px 48px; gap: 28px; }
+      .hero-photo-wrap { order: -1; }
+      .hero-pillars { gap: 20px; }
+      .meet { padding: 48px 18px; }
+      .meet-grid { grid-template-columns: 1fr; }
+      .services { padding: 48px 18px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .services-head { flex-direction: column; align-items: flex-start; }
+      .not-chain { padding: 48px 18px; }
+      .book-cta { grid-template-columns: 1fr; padding: 48px 18px; gap: 36px; }
+      footer { grid-template-columns: 1fr; padding: 48px 18px; }
+      .footer-bar { padding: 14px 18px; flex-direction: column; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- PROMO BAR -->
+<div class="promo-bar">
+  <span>NEW CUSTOMERS: FREE DIAGNOSTIC TEST &nbsp;·&nbsp; FREE FIRST OIL CHANGE &nbsp;·&nbsp; CALL (904) 439-6000</span>
+</div>
+
+<!-- RATING BAR -->
+<div class="rating-bar">
+  <div class="rating-bar-left">
+    <span class="mono">LOCALLY OWNED &amp; OPERATED · ST. AUGUSTINE, FL</span>
+  </div>
+  <div class="rating-bar-mid mono">
+    <span>CERTIFIED MECHANIC</span>
+    <span>MULTI-SERVICE SHOP</span>
+    <span>HONEST &amp; RELIABLE</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-badge">A</div>
+    <div class="nav-name">AF Auto Mechanic</div>
+    <div class="nav-city mono">· ST. AUGUSTINE, FL</div>
+  </div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#meet">About</a>
+    <a href="#footer">Find us</a>
+  </div>
+  <div class="nav-right">
+    <span class="nav-phone mono">(904) 439-6000</span>
+    <a class="btn-pill" href="tel:+19044396000">Book a visit</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-kicker mono">DOBBS ROAD · ST. AUGUSTINE, FL 32086</div>
+    <h1 class="display">
+      The shop that<br/>
+      treats you like<br/>
+      <span class="accent">a neighbor.</span>
+    </h1>
+    <p class="hero-body">AF Auto is a local, certified mechanic shop built on one thing: being honest and reliable. You get real answers, personalized attention, and service from people who are part of this community.</p>
+    <div class="hero-actions">
+      <a class="btn-pill-lg" href="tel:+19044396000">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.9z"/></svg>
+        Call (904) 439-6000
+      </a>
+      <a class="btn-pill-out" href="#services">See what we fix</a>
+    </div>
+    <div class="hero-pillars">
+      <div>
+        <div class="hero-pillar-label mono">REPUTATION</div>
+        <div class="hero-pillar-val display">Honest &amp; reliable</div>
+      </div>
+      <div>
+        <div class="hero-pillar-label mono">APPROACH</div>
+        <div class="hero-pillar-val display">Personalized attention</div>
+      </div>
+      <div>
+        <div class="hero-pillar-label mono">COVERAGE</div>
+        <div class="hero-pillar-val display">All of St. Augustine</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="meet" id="meet">
+  <div class="section-kicker mono">✦ THE SHOP</div>
+  <div class="meet-grid">
+    <div>
+      <h2 class="display">The shop St. Augustine comes back to.</h2>
+      <p class="meet-body">AF Auto is a locally owned, certified mechanic shop on Dobbs Road — a full-service operation covering everything from routine maintenance to major repair. No corporate overhead, no upsell pressure. Just the work, done right.</p>
+      <p class="meet-body">AF Auto has built its reputation in this community one car at a time. Your car gets fixed right, you tell someone. That's the model.</p>
+      <div class="meet-whys">
+        <div class="meet-why-h mono">WHAT MAKES THE DIFFERENCE</div>
+        <div class="meet-why-item">
+          <div class="meet-why-num mono">01</div>
+          <div>
+            <div class="meet-why-title">You get a straight answer.</div>
+            <div class="meet-why-body">No service writer on commission. The people quoting your job are the people doing it — and they explain what's wrong in plain language.</div>
+          </div>
+        </div>
+        <div class="meet-why-item">
+          <div class="meet-why-num mono">02</div>
+          <div>
+            <div class="meet-why-title">Personalized attention, every visit.</div>
+            <div class="meet-why-body">This isn't a volume operation. You're not a ticket number. AF takes care of St. Augustine one car at a time.</div>
+          </div>
+        </div>
+        <div class="meet-why-item">
+          <div class="meet-why-num mono">03</div>
+          <div>
+            <div class="meet-why-title">Honest estimates, no surprises.</div>
+            <div class="meet-why-body">You know what you're paying before anything starts. No pressure, no upsells, no runaround.</div>
+          </div>
+        </div>
+        <div class="meet-why-item">
+          <div class="meet-why-num mono">04</div>
+          <div>
+            <div class="meet-why-title">A reputation built right here.</div>
+            <div class="meet-why-body">Locally owned and operated. This community is their customer base — earning your trust isn't a slogan, it's the business model.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="meet-creds">
+        <div class="meet-cred">
+          <div class="meet-cred-title mono">CERTIFIED MECHANIC</div>
+          <div class="meet-cred-body">Certified auto repair — not a chain, not a franchise operation.</div>
+        </div>
+        <div class="meet-cred">
+          <div class="meet-cred-title mono">LOCALLY OWNED &amp; OPERATED</div>
+          <div class="meet-cred-body">The people running this shop live in this community. Their reputation depends on yours.</div>
+        </div>
+        <div class="meet-cred">
+          <div class="meet-cred-title mono">MULTI-SERVICE SHOP</div>
+          <div class="meet-cred-body">From routine maintenance to major repairs — one shop, same trusted crew.</div>
+        </div>
+        <div class="meet-cred">
+          <div class="meet-cred-title mono">SERVING ALL OF ST. AUGUSTINE</div>
+          <div class="meet-cred-body">Dobbs Road location. Easy access from US-1, 207, and Cobblestone Village.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-head">
+    <div>
+      <div class="section-kicker mono">/ WHAT WE FIX</div>
+      <h2 class="display">Multi-service repair.<br/>One shop you can trust.</h2>
+    </div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">⚙️</div>
+      <div class="service-name display">Oil changes</div>
+      <div class="service-blurb">Routine maintenance done right. Quick turnaround, no pressure.</div>
+      <div class="service-why">Skip this long enough and your engine can seize. That's a $6,000–$10,000 repair — versus a $50 oil change. It's the easiest thing to stay on top of.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔧</div>
+      <div class="service-name display">Brakes</div>
+      <div class="service-blurb">Inspection, pads, rotors, calipers, fluid flush. Diagnosed before quoted.</div>
+      <div class="service-why">Grinding, squealing, or a car that pulls when you stop aren't just annoyances — they mean your stopping distance is already longer than it should be. This is a safety issue, not a "get to it later" one.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💡</div>
+      <div class="service-name display">Engine diagnostics</div>
+      <div class="service-blurb">Check engine light, performance issues — explained in plain language.</div>
+      <div class="service-why">That light could mean a $20 sensor or the start of a $4,000 problem. Ignoring it doesn't make it smaller — it makes it more expensive. We'll tell you exactly what it means.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">❄️</div>
+      <div class="service-name display">A/C &amp; heating</div>
+      <div class="service-blurb">Recharge, leak diagnosis, compressor service. Critical in Florida heat.</div>
+      <div class="service-why">In a St. Augustine summer, a broken A/C isn't just uncomfortable — it's a real health risk, especially with kids in the car. If it's not blowing cold, don't wait.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🛞</div>
+      <div class="service-name display">Tires &amp; rotation</div>
+      <div class="service-blurb">Mount, balance, rotate, patch. All makes and models.</div>
+      <div class="service-why">Worn or uneven tires are a leading cause of blowouts and hydroplaning. If your car vibrates at highway speed or pulls to one side, your tires are telling you something.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🚗</div>
+      <div class="service-name display">Suspension &amp; alignment</div>
+      <div class="service-blurb">Shocks, struts, steering, alignment. Your car should drive like it should.</div>
+      <div class="service-why">If your car drifts, bounces hard over bumps, or your steering wheel sits crooked — your tires are wearing unevenly right now, and your handling in an emergency is already compromised.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">⚡</div>
+      <div class="service-name display">Electrical</div>
+      <div class="service-blurb">Alternators, starters, batteries, wiring. Diagnosed, explained, fixed.</div>
+      <div class="service-why">A failing battery or alternator doesn't just leave you stranded — it can corrupt the computer systems modern cars depend on. Strange warning lights, slow starts, or flickering electronics are early warnings worth catching.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔩</div>
+      <div class="service-name display">Engine &amp; transmission</div>
+      <div class="service-blurb">Major repair and rebuilds — quoted honestly before anything starts.</div>
+      <div class="service-why">These are the two most expensive systems in your car. A small leak or odd noise caught early can be a $300 fix. Left alone, the same problem becomes a $5,000 rebuild. We'll tell you where you stand — no pressure.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔍</div>
+      <div class="service-name display">Inspections &amp; tune-ups</div>
+      <div class="service-blurb">Pre-purchase checks, belts, filters, fluids. Know what you're buying.</div>
+      <div class="service-why">Buying a used car without an inspection is a gamble. And routine tune-ups catch the small stuff — a cracked belt, low fluid — before it leaves you stranded on the side of the road.</div>
+    </div>
+  </div>
+  <div class="services-callout">
+    <p><strong>Don't see your service?</strong> AF is a full multi-service shop. Call and describe the problem — they'll tell you straight if they can help.</p>
+    <a class="btn-pill" href="tel:+19044396000">(904) 439-6000</a>
+  </div>
+</section>
+
+<!-- NOT A CHAIN -->
+<section class="not-chain">
+  <div class="section-kicker mono">/ WHY IT MATTERS WHERE YOU GO</div>
+  <h2 class="display">
+    Not Goodyear.<br/>
+    <span class="dim">Not Pep Boys.</span><br/>
+    AF Auto.
+  </h2>
+  <p class="not-chain-sub">National chains are built around volume targets and scripted upsells. AF is built around a local reputation — the kind you earn one honest repair at a time, in the same community you live in.</p>
+  <div class="not-chain-stat display">Superior service. Personalized attention. Locally owned.</div>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>NATIONAL CHAIN</th>
+        <th>AF AUTO MECHANIC</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Who writes your quote?</td>
+        <td>Service writer on commission</td>
+        <td>The mechanic who does the work</td>
+      </tr>
+      <tr>
+        <td>Upsells?</td>
+        <td>Scripted and tiered — it's the model</td>
+        <td>None. If it can wait, they say so.</td>
+      </tr>
+      <tr>
+        <td>Who do you talk to?</td>
+        <td>A different face every time</td>
+        <td>The same local crew</td>
+      </tr>
+      <tr>
+        <td>What's at stake for them?</td>
+        <td>Monthly volume targets</td>
+        <td>Their reputation in this community</td>
+      </tr>
+      <tr>
+        <td>Personalized attention?</td>
+        <td>You're a ticket number</td>
+        <td>You're a neighbor</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- BOOK CTA -->
+<section class="book-cta">
+  <div>
+    <div class="section-kicker mono">/ READY?</div>
+    <h2 class="display">Book it. Or just call the shop.</h2>
+    <p class="book-body">New customers get a free diagnostic test and a free first oil change. Call or book online — either way, you get honest service from a local crew that has a reason to take care of you.</p>
+    <div class="book-actions">
+      <a class="btn-pill-cream display" href="tel:+19044396000">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.9z"/></svg>
+        (904) 439-6000
+      </a>
+      <a class="btn-pill-ghost" href="https://af-auto-mechanic.square.site" target="_blank" rel="noopener">Book online →</a>
+    </div>
+  </div>
+  <div>
+    <div class="section-kicker mono" style="color:rgba(244,237,224,0.55)">NEW CUSTOMER OFFERS</div>
+    <div class="promo-cards">
+      <div class="promo-card">
+        <div class="promo-card-name display">Free Diagnostic Test</div>
+        <div class="promo-card-body">Let them find the problem first — no charge to new customers. Know before you commit.</div>
+      </div>
+      <div class="promo-card">
+        <div class="promo-card-name display">Free First Oil Change</div>
+        <div class="promo-card-body">Come in, see the shop, drive away knowing what honest service looks like. No cost, no obligation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div>
+    <div class="footer-drop display">Drop by. The coffee's on.</div>
+    <p class="footer-drop-body">On Dobbs Road, just off US-1 — easy to find, easy to reach. Same honest service every time.</p>
+    <p style="margin-top:14px;font-size:13px;color:var(--mute)">
+      <a href="mailto:afautosta@gmail.com" style="color:var(--mute);text-decoration:none;">afautosta@gmail.com</a>
+    </p>
+  </div>
+  <div>
+    <div class="footer-col-kicker mono">VISIT</div>
+    <div class="footer-col-body">
+      2139 Dobbs Road, Ste 3<br/>
+      St. Augustine, FL 32086<br/><br/>
+      <a href="tel:+19044396000" style="font-family:'JetBrains Mono',monospace;font-size:13px">(904) 439-6000</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-col-kicker mono">HOURS</div>
+    <div class="footer-col-body">
+      <div class="footer-hours-row"><span>Mon – Fri</span><span>9 AM – 8 PM</span></div>
+      <div class="footer-hours-row"><span>Saturday</span><span>10 AM – 6 PM</span></div>
+      <div class="footer-hours-row"><span>Sunday</span><span>10 AM – 2 PM</span></div>
+    </div>
+  </div>
+</footer>
+<div class="footer-bar mono">
+  <span>© 2026 AF AUTO MECHANIC · LOCALLY OWNED · ST. AUGUSTINE, FL</span>
+  <span>LOCAL SHOP. HONEST WORK.</span>
+</div>
+
+</body>
+</html>
