@@ -152,6 +152,7 @@
     .not-chain { padding: 72px 48px; background: var(--paper); border-top: 1px solid var(--line); }
     .not-chain h2 { font-family: 'Inter Tight', sans-serif; font-weight: 600; letter-spacing: -0.035em; font-size: clamp(32px, 5vw, 52px); line-height: 0.97; color: var(--green); margin-top: 14px; }
     .not-chain h2 .dim { color: var(--mute); }
+    .not-chain-headline { display: flex; flex-wrap: wrap; gap: 0.35em; align-items: baseline; }
     .not-chain-sub { font-size: 15px; color: var(--mute); margin-top: 12px; max-width: 560px; line-height: 1.65; }
     .not-chain-stat { font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: 17px; color: var(--green); border: 1px solid var(--line); padding: 12px 20px; margin-top: 24px; display: inline-block; }
     .comparison-table { width: 100%; margin-top: 40px; border-collapse: collapse; font-size: 14px; }
@@ -423,10 +424,10 @@
 <!-- NOT A CHAIN -->
 <section class="not-chain">
   <div class="section-kicker mono">/ WHY IT MATTERS WHERE YOU GO</div>
-  <h2 class="display">
-    Not Goodyear.<br/>
-    <span class="dim">Not Pep Boys.</span><br/>
-    AF Auto.
+  <h2 class="display not-chain-headline">
+    <span>Not Goodyear.</span>
+    <span class="dim">Not Pep Boys.</span>
+    <span>AF Auto.</span>
   </h2>
   <p class="not-chain-sub">National chains are built around volume targets and scripted upsells. AF is built around a local reputation — the kind you earn one honest repair at a time, in the same community you live in.</p>
   <div class="not-chain-stat display">Superior service. Personalized attention. Locally owned.</div>
